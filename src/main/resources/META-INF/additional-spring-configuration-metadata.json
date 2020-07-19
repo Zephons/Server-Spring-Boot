@@ -5,9 +5,9 @@
     "description": "'jwt.secret' is the secret key of the JWT token generator that this application is using."
   },
   {
-    "name": "client.port",
+    "name": "angular.url",
     "type": "java.lang.String",
-    "description": "'client.port' is the port exposed by the front-end client."
+    "description": "'angular.url' is the url address exposed by the front-end client."
   },
   {
     "name": "mysql.port",

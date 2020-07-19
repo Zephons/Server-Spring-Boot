@@ -18,8 +18,8 @@ import fr.isika.projet4.ServerSpringBoot.constant.FileConstant;
 @SpringBootApplication
 public class ServerSpringBootApplication {
 	
-	@Value("${client.port}")
-	private String clientPort;
+	@Value("${angular.url}")
+	private String clientURL;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ServerSpringBootApplication.class, args);
@@ -31,7 +31,7 @@ public class ServerSpringBootApplication {
 		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
-		corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:" + clientPort));
+		corsConfiguration.setAllowedOrigins(Collections.singletonList(clientURL));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Jwt-Token", "Authorization", "Origin, Accept", "X-Requested-With",
 				"Access-Control-Request-Method", "Access-Control-Request-Headers"));
