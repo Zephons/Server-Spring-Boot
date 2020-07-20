@@ -1,4 +1,4 @@
-package fr.isika.projet4.ServerSpringBoot.domain;
+package fr.isika.projet4.ServerSpringBoot.model;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

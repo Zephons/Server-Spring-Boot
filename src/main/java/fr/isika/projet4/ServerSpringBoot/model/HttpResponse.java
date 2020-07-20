@@ -1,4 +1,4 @@
-package fr.isika.projet4.ServerSpringBoot.domain;
+package fr.isika.projet4.ServerSpringBoot.model;
 
 import java.util.Date;
 

@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.auth0.jwt.exceptions.TokenExpiredException;
 
-import fr.isika.projet4.ServerSpringBoot.domain.HttpResponse;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.EmailExistsException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.EmailNotFoundException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.NotAnImageFileException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.UserNotFoundException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.UsernameExistsException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.EmailExistsException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.EmailNotFoundException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.NotAnImageFileException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.UserNotFoundException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.UsernameExistsException;
+import fr.isika.projet4.ServerSpringBoot.model.HttpResponse;
 
 @RestControllerAdvice
 public class ExceptionHandling implements ErrorController {

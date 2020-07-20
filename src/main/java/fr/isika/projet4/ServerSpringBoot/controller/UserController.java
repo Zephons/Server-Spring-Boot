@@ -1,4 +1,4 @@
-package fr.isika.projet4.ServerSpringBoot.resource;
+package fr.isika.projet4.ServerSpringBoot.controller;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -30,21 +30,21 @@ import org.springframework.web.multipart.MultipartFile;
 
 import fr.isika.projet4.ServerSpringBoot.constant.FileConstant;
 import fr.isika.projet4.ServerSpringBoot.constant.SecurityConstant;
-import fr.isika.projet4.ServerSpringBoot.domain.HttpResponse;
-import fr.isika.projet4.ServerSpringBoot.domain.User;
-import fr.isika.projet4.ServerSpringBoot.domain.UserPrincipal;
 import fr.isika.projet4.ServerSpringBoot.exception.ExceptionHandling;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.EmailExistsException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.EmailNotFoundException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.NotAnImageFileException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.UserNotFoundException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.UsernameExistsException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.EmailExistsException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.EmailNotFoundException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.NotAnImageFileException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.UserNotFoundException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.UsernameExistsException;
+import fr.isika.projet4.ServerSpringBoot.model.HttpResponse;
+import fr.isika.projet4.ServerSpringBoot.model.User;
+import fr.isika.projet4.ServerSpringBoot.model.UserPrincipal;
 import fr.isika.projet4.ServerSpringBoot.service.UserService;
 import fr.isika.projet4.ServerSpringBoot.utility.JwtUtility;
 
 @RestController
 @RequestMapping(value = {"/", "/user"})
-public class UserResource extends ExceptionHandling {
+public class UserController extends ExceptionHandling {
 	
 	public static final String USER_DELETED_SUCCESSFULLY = "User deleted successfully.";
 	public static final String EMAIL_SENT = "An email with a new password was sent to: ";
@@ -53,7 +53,7 @@ public class UserResource extends ExceptionHandling {
 	private JwtUtility jwtUtility;
 	
 	@Autowired
-	public UserResource(UserService userService, AuthenticationManager authenticationManager, JwtUtility jwtUtility) {
+	public UserController(UserService userService, AuthenticationManager authenticationManager, JwtUtility jwtUtility) {
 		this.userService = userService;
 		this.authenticationManager = authenticationManager;
 		this.jwtUtility = jwtUtility;

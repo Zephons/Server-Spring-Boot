@@ -23,7 +23,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.JWTVerifier;
 
 import fr.isika.projet4.ServerSpringBoot.constant.SecurityConstant;
-import fr.isika.projet4.ServerSpringBoot.domain.UserPrincipal;
+import fr.isika.projet4.ServerSpringBoot.model.UserPrincipal;
 
 @Component
 public class JwtUtility {

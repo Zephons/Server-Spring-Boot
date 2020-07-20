@@ -7,12 +7,12 @@ import javax.mail.MessagingException;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import fr.isika.projet4.ServerSpringBoot.domain.User;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.EmailExistsException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.EmailNotFoundException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.NotAnImageFileException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.UserNotFoundException;
-import fr.isika.projet4.ServerSpringBoot.exception.domain.UsernameExistsException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.EmailExistsException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.EmailNotFoundException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.NotAnImageFileException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.UserNotFoundException;
+import fr.isika.projet4.ServerSpringBoot.exception.model.UsernameExistsException;
+import fr.isika.projet4.ServerSpringBoot.model.User;
 
 public interface UserService {
 	

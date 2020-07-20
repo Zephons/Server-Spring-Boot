@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.isika.projet4.ServerSpringBoot.constant.SecurityConstant;
-import fr.isika.projet4.ServerSpringBoot.domain.HttpResponse;
+import fr.isika.projet4.ServerSpringBoot.model.HttpResponse;
 
 @Component
 public class JwtAccessDeniedHandler implements AccessDeniedHandler {

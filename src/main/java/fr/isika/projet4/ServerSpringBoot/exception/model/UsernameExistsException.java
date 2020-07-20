@@ -1,4 +1,4 @@
-package fr.isika.projet4.ServerSpringBoot.exception.domain;
+package fr.isika.projet4.ServerSpringBoot.exception.model;
 
 public class UsernameExistsException extends Exception {
 
