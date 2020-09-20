@@ -1,6 +1,6 @@
 package fr.isika.projet4.ServerSpringBoot.utility;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -85,11 +85,14 @@ public class JwtUtility {
 	}
 
 	private String[] getClaimsFromUser(UserPrincipal userPrincipal) {
-		List<String> authorities = new ArrayList<String>();
-		for (GrantedAuthority grantedAuthority : userPrincipal.getAuthorities()) {
-			authorities.add(grantedAuthority.getAuthority());
-		}
-		return authorities.toArray(new String[0]);
+//		List<String> authorities = new ArrayList<String>();
+//		for (GrantedAuthority grantedAuthority : userPrincipal.getAuthorities()) {
+//			authorities.add(grantedAuthority.getAuthority());
+//		}
+//		return authorities.toArray(new String[0]);
+		
+		return userPrincipal.getAuthorities().stream()
+	            .map(GrantedAuthority::getAuthority).toArray(String[]::new);
 	}
 	
 }
