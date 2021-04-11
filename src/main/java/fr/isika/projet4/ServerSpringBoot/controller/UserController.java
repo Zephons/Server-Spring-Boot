@@ -160,11 +160,6 @@ public class UserController extends ExceptionHandling {
 		return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
 	}
 	
-	@GetMapping(path = "/image/{userName}/{fileName}", produces = MediaType.IMAGE_JPEG_VALUE)
-	public byte[] getProfileImage(@PathVariable("userName") String userName, @PathVariable("fileName") String fileName) throws IOException {
-		return Files.readAllBytes(Paths.get(FileConstant.USER_FOLDER + userName + FileConstant.FORWARD_SLASH + fileName));
-	}
-	
 	@GetMapping(path = "/image/profile/{userName}", produces = MediaType.IMAGE_JPEG_VALUE)
 	public byte[] getTempProfileImage(@PathVariable("userName") String userName) throws IOException {
 		URL url = new URL (FileConstant.TEMP_PROFILE_IMAGE_BASE_URL + userName + FileConstant.VARIATION_HUMAN);
@@ -177,6 +172,16 @@ public class UserController extends ExceptionHandling {
 			}
 		}
 		return byteArrayOutputStream.toByteArray();
+	}
+	
+	@GetMapping(path = "/image/{userName}/{fileName}", produces = MediaType.IMAGE_JPEG_VALUE)
+	public byte[] getProfileImage(@PathVariable("userName") String userName, @PathVariable("fileName") String fileName) throws IOException {
+		return Files.readAllBytes(Paths.get(FileConstant.USER_FOLDER + userName + FileConstant.FORWARD_SLASH + fileName));
+	}
+	
+	@GetMapping("/test")
+	public String getTest() {
+		return "ok";
 	}
 	
 	private ResponseEntity<HttpResponse> response(HttpStatus httpStatus, String message) {
