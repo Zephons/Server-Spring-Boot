@@ -47,6 +47,7 @@ public class EmailService {
 				+ "\n \nYour new account password is: " + passWord 
 				+ "\n \nThe Support Team of The Tweeth Sense, LLC.");
 		message.setSentDate(new Date());
+		message.setHeader("X-Priority", "1");
 		message.saveChanges();
 		return message;
 	}
